@@ -12,14 +12,14 @@ class AboutPage extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
     const img = get(this, 'props.data.allContentfulAsset')
-    console.log(img)
+    const gif = img.edges.find(imgs => imgs.node.title === 'a gif')
 
     return (
       <Layout location={this.props.location}>
         <div style={{ background: '#fff' }}>
           <Helmet title={siteTitle} />
           <Hero data={author.node} />
-          <Form url={img.edges[0].node.fluid} />
+          <Form url={gif} />
         </div>
       </Layout>
     )
@@ -53,6 +53,7 @@ export const pageQuery = graphql`
     allContentfulAsset {
       edges {
         node {
+          title
           fluid(
             maxWidth: 1180
             maxHeight: 480
