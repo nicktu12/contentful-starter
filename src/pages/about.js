@@ -20,7 +20,6 @@ class AboutPage extends React.Component {
           <Hero data={author.node} />
           <Form />
           <div className="wrapper">
-            <h1>code red!</h1>
             <h2 className="section-headline">Recent articles</h2>
             <ul className="article-list">
               {posts.map(({ node }) => {
