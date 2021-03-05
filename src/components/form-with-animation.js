@@ -14,7 +14,7 @@ export default ({url}) => (
     <label>
     email
     <input type="email" />
-    <button type="submit" />
     </label>
+    <button type="submit">Submit</button>
   </div>
 )
