@@ -6,7 +6,7 @@ import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 
-class AboutIndex extends React.Component {
+class AboutPage extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
@@ -36,10 +36,10 @@ class AboutIndex extends React.Component {
   }
 }
 
-export default RootIndex
+export default AboutPage
 
 export const pageQuery = graphql`
-  query HomeQuery {
+  query AboutQuery {
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {
