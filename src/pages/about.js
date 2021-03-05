@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import Hero from '../components/hero'
+import Form from '../components/form-with-animation'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 
@@ -17,6 +18,7 @@ class AboutPage extends React.Component {
         <div style={{ background: '#fff' }}>
           <Helmet title={siteTitle} />
           <Hero data={author.node} />
+          <Form />
           <div className="wrapper">
             <h1>code red!</h1>
             <h2 className="section-headline">Recent articles</h2>
